@@ -2,12 +2,12 @@ public class App {
     public static void main(String[] args) throws Exception {
         Messages.welcome();
         System.out.println();
-        board.create(board.requestParameters());
+        Board.create(Board.requestParameters());
         System.out.println();
-        while (board.checkShipsRemainging()){
-            board.show();
+        while (Board.checkShipsRemainging()){
+            Board.show();
             System.out.println();
-            board.shoot();
+            Board.shoot();
             System.out.println();
             Messages.showShipsRemaining();
             System.out.println();

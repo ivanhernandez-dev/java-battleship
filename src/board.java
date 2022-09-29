@@ -1,7 +1,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class board {
+public class Board {
     static Scanner reader = new Scanner(System.in);
     static int[][] game; // 0 = Default, 1 = Barco, 2 = Agua, 3 = Tocado
     static int shipsRemaining;
