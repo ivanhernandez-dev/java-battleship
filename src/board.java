@@ -55,17 +55,35 @@ public class board {
 
     static void show(){
         for (var i = 0; i < game.length; i++){
+            // Draw upper line
+            if (i == 0){
+                System.out.print("    ");
+                for (var j = 0; j < game[i].length; j++){
+                    System.out.print(j + " ");
+                }
+                System.out.println("x");
+                System.out.print("   ");
+                for (var j = 0; j < game[i].length*2; j++){
+                    System.out.print("-");
+                }
+                System.out.println();
+            }
             for (var j = 0; j < game[i].length; j++){
+                // Draw left side line
+                if (j == 0){
+                    System.out.print(i + " | ");
+                }
+                // Draw content
                 switch(game[i][j]){
                     case 0:
                     case 1:
-                        System.out.print("·");
+                        System.out.print("· ");
                         break;
                     case 2:
-                        System.out.print(ConsoleColors.RED + "X" + ConsoleColors.RESET);
+                        System.out.print("X ");
                         break;
                     case 3:
-                        System.out.print(ConsoleColors.GREEN + "X" + ConsoleColors.RESET);
+                        System.out.print(ConsoleColors.BLUE + "X " + ConsoleColors.RESET);
                         break;
                     
                 }
@@ -73,7 +91,7 @@ public class board {
             }
             System.out.println();
         }
-        System.out.println();
+        System.out.println("y");
     }
 
     static void shoot(){
