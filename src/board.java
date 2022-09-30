@@ -14,21 +14,21 @@ public class Board {
             System.out.print("Enter the board width: ");
             parameters[0] = reader.nextInt();
             if(parameters[0]<=0){
-                System.out.println("Error: Width out of range");
+                System.out.println(ConsoleColors.RED + "Error: " + ConsoleColors.RESET + "Width out of range");
             }
         } while (parameters[0]<=0);
         do{
             System.out.print("Enter board height: ");
             parameters[1] = reader.nextInt();
             if(parameters[1]<=0){
-                System.out.println("Error: Height out of range");
+                System.out.println(ConsoleColors.RED + "Error: " + ConsoleColors.RESET + "Height out of range");
             }
         } while (parameters[1]<=0);
         do{
             System.out.print("Introduce boat amount: ");
             parameters[2] = reader.nextInt();
             if (parameters[2] == 0 || parameters[2] > (parameters[0]*parameters[1])){
-                System.out.println("Error: Amount out of range [1-" + (parameters[0]*parameters[1]) + "]");
+                System.out.println(ConsoleColors.RED + "Error: " + ConsoleColors.RESET + "Amount out of range [1-" + (parameters[0]*parameters[1]) + "]");
             }
         } while (parameters[2] == 0 || parameters[2] > (parameters[0]*parameters[1]));
         System.out.println();
@@ -99,12 +99,18 @@ public class Board {
         do{
             System.out.print("Enter the X coordinate of the shot: ");
             posX = reader.nextInt();
-        } while(posX > game[0].length || posX < 0);
+            if (posX >= game[0].length || posX < 0){
+                System.out.println(ConsoleColors.RED + "Error: " + ConsoleColors.RESET + "Coordinate out of range.");
+            }
+        } while(posX >= game[0].length || posX < 0);
 
         do{
             System.out.print("Enter the Y coordinate of the shot: ");
             posY = reader.nextInt();
-        } while(posY > game.length || posY < 0);
+            if (posY >= game.length || posY < 0){
+                System.out.println(ConsoleColors.RED + "Error: " + ConsoleColors.RESET + "Coordinate out of range.");
+            }
+        } while(posY >= game.length || posY < 0);
 
         switch(game[posY][posX]){
             case 0:
