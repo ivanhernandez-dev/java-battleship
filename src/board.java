@@ -100,7 +100,7 @@ public class Board {
             System.out.print("Enter the X coordinate of the shot: ");
             posX = reader.nextInt();
             if (posX >= game[0].length || posX < 0){
-                System.out.println(ConsoleColors.BLUE + "Error: " + ConsoleColors.RESET + "Coordinate out of range.");
+                System.out.println(ConsoleColors.RED + "Error: " + ConsoleColors.RESET + "Coordinate out of range.");
             }
         } while(posX >= game[0].length || posX < 0);
 
@@ -108,7 +108,7 @@ public class Board {
             System.out.print("Enter the Y coordinate of the shot: ");
             posY = reader.nextInt();
             if (posY >= game.length || posY < 0){
-                System.out.println(ConsoleColors.BLUE + "Error: " + ConsoleColors.RESET + "Coordinate out of range.");
+                System.out.println(ConsoleColors.RED + "Error: " + ConsoleColors.RESET + "Coordinate out of range.");
             }
         } while(posY >= game.length || posY < 0);
 
