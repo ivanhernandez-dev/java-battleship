@@ -13,6 +13,6 @@ public class Messages {
                 System.out.print("#");
             }
         }
-        System.out.print("]");
+        System.out.println("]");
     }
 }
